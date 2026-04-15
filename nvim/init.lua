@@ -1,0 +1,32 @@
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+local opt = vim.opt
+opt.number = true
+opt.relativenumber = true
+opt.cursorline = true
+opt.lazyredraw = true
+opt.showmatch = true
+opt.incsearch = true
+opt.hlsearch = true
+opt.clipboard = 'unnamedplus'
+opt.ignorecase = true
+opt.smartcase = true
+opt.inccommand = 'split'
+
+opt.termguicolors = true
+opt.expandtab = true
+opt.tabstop = 2
+opt.softtabstop = 2
+opt.shiftwidth = 2
+opt.foldenable = true
+opt.history = 2000
+opt.nrformats = 'bin,hex'
+opt.undofile = true
+opt.splitright = true
+opt.splitbelow = true
+opt.cmdheight = 0
+opt.scrolloff = 5
+for _, file in ipairs(vim.fn.glob(vim.fn.stdpath("config") .. "/plugins/*.lua", false, true)) do
+  dofile(file)
+end
